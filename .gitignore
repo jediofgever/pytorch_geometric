@@ -4,6 +4,7 @@ build/
 dist/
 alpha/
 runs/
+log/
 .cache/
 .eggs/
 lightning_logs/
