@@ -46,6 +46,8 @@ from .wikipedia_network import WikipediaNetwork
 from .actor import Actor
 from .jodie import JODIEDataset
 from .mixhop_synthetic_dataset import MixHopSyntheticDataset
+from .uneven_ground_dataset import UnevenGroundDataset
+
 
 __all__ = [
     'KarateClub',
@@ -98,6 +100,7 @@ __all__ = [
     'Actor',
     'JODIEDataset',
     'MixHopSyntheticDataset',
+    'UnevenGroundDataset'
 ]
 
 classes = __all__
