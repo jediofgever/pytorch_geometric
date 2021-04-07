@@ -7,7 +7,6 @@ from torch_geometric.data import DataLoader
 from torch_geometric.nn import knn_interpolate
 from torch_geometric.utils import intersection_and_union as i_and_u
 from torch_geometric.datasets import UnevenGroundDataset
-
 from pointnet2_classification import SAModule, GlobalSAModule, MLP
 
 transform = T.Compose([
@@ -17,11 +16,13 @@ transform = T.Compose([
     T.RandomRotate(15, axis=2)
 ])
 pre_transform = T.NormalizeScale()
-train_dataset = UnevenGroundDataset(root='/home/ros2-foxy/uneven_ground_dataset/', transform=transform,
-                         pre_transform=pre_transform)
 
-train_loader = DataLoader(train_dataset, batch_size=12, shuffle=True,
+train_dataset = UnevenGroundDataset(root='/home/ros2-foxy/uneven_ground_dataset/', transform=None,
+                         pre_transform=None)
+
+train_loader = DataLoader(train_dataset, batch_size=1, shuffle=True,
                           num_workers=6)
+
 
 class FPModule(torch.nn.Module):
     def __init__(self, k, nn):
